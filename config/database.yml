@@ -15,10 +15,11 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  adapter: postgresql 
+  encoding: SQL_ASCII
+  host: localhost
+  username: polish
+  password: polish
   pool: 5
 
 development:
@@ -81,5 +82,5 @@ test:
 production:
   <<: *default
   database: car-site_production
-  username: car-site
-  password: <%= ENV['CAR-SITE_DATABASE_PASSWORD'] %>
+  username: polish
+  password: polish
