@@ -24,7 +24,6 @@ okay now here's the stuff that would be on this project for everyone
 ## Known issues
 * database.yml has raw credentials, something I would *never* do normally, but I wanted to make Postgres deploy as easy as possible for any reviewers.
 
-
 ## Requirements
 * Ruby version 2.3.0
 
