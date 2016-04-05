@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :vehicles
   
   devise_for :users
+  
   root 'dashboard#index'
-  get "angular_test", to: "angular_test#index"
   get "angular_form", to: "angular_form#index"
 end
