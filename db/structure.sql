@@ -76,7 +76,8 @@ CREATE TABLE people (
     age integer,
     gender character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    household_id integer
 );
 
 
@@ -245,6 +246,13 @@ ALTER TABLE ONLY vehicles
 
 
 --
+-- Name: index_people_on_household_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_people_on_household_id ON people USING btree (household_id);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -287,4 +295,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160405044246');
 INSERT INTO schema_migrations (version) VALUES ('20160405144231');
 
 INSERT INTO schema_migrations (version) VALUES ('20160405170516');
+
+INSERT INTO schema_migrations (version) VALUES ('20160406072131');
 

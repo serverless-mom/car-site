@@ -1,17 +1,33 @@
-<!-- first partial for form process -->
 <div class="form-group">
     <label for="make">Make</label>
-    <input type="text" class="form-control" name="make" ng-model="formData.make">
+    <input type="text" class="form-control" name="make" ng-model="vehicle.make">
+</div>
+<div class="form-group">
+    <label for="model">Model</label>
+    <input type="text" class="form-control" name="model" ng-model="vehicle.model">
+</div>
+<div class="form-group">
+    <label for="year">Year</label>
+    <input type="number" class="form-control" name="year" ng-model="vehicle.year">
 </div>
 <div class="form-group">
     <label for="license">License Plate Number</label>
-    <input type="text" class="form-control" name="license" ng-model="formData.license">
+    <input type="text" class="form-control" name="license" ng-model="vehicle.license">
 </div>
-<div class="form-group row">
+<div class="form-group">
+    <label for="owner">Owner</label>
+    <select name="singleSelect" ng-model="vehicle.ownerIndex" class="form-control">
+         <option ng-repeat="person in formData.people" value="{{$index}}">{{person.first_name+" "+person.last_name+", "+person.age}}</option>
+    </select>
+</div>
+
+
 <div class="text-center">
-    <span class="glyphicon glyphicon-heart"></span>
-    <h3>Thanks For Your info!</h3>
+    <div class="col-xs-6 col-xs-offset-3">
+        <button ng-click="addVehicle(vehicle)" class="btn btn-block btn-secondary">Add Another Car</button>
     
-    <button type="submit" class="btn btn-danger" ng-click="processForm()">Submit</button>
-</div>
+        <a ng-click="addVehicle(vehicle)" ui-sref="form.finalize" class="btn btn-block btn-info">    
+        Finalize! <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
 </div>

@@ -1,17 +1,29 @@
-<!-- first partial for form process -->
 <div class="form-group">
     <label for="first_name">First Name</label>
-    <input type="text" class="form-control" name="first_name" ng-model="formData.people[0].first_name">
+    <input type="text" class="form-control" name="first_name" ng-model="person.first_name">
 </div>
 <div class="form-group">
     <label for="last_name">Last Name</label>
-    <input type="text" class="form-control" name="last_name" ng-model="formData.people[0].last_name">
+    <input type="text" class="form-control" name="last_name" ng-model="person.last_name">
+</div>
+<div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" name="age" ng-model="person.age">
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="string" class="form-control" name="email" ng-model="person.email">
+</div>
+<div class="form-group">
+    <label for="gender">Gender</label>
+    <input type="string" class="form-control" name="gender" ng-model="person.gender">
 </div>
 <div class="form-group row">
-    <button ng-click="logPerson(formData.people[0])">press me</button>
 <div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.vehicles" class="btn btn-block btn-info">    
-    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    <button ng-click="addPerson(person)" class="btn btn-block btn-secondary">Add another person</button>
+
+    <a ng-click="addPerson(person)" ui-sref="form.vehicles" class="btn btn-block btn-info">    
+    Add Vehicles <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
 </div>

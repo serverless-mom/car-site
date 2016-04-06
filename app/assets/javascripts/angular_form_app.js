@@ -29,25 +29,40 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
         .state('form.vehicles', {
             url: '/vehicles',
             templateUrl: 'form-vehicles.html'
+        })
+        
+        .state('form.finalize', {
+            url: '/finalize',
+            templateUrl: 'form-finalize.html'
         });
         
-    //want to default to the 'household' view
+    //default to the 'household' view
     $urlRouterProvider.otherwise('/form/household');
 })
 
 .controller('formController', function($scope) {
     
-    $scope.formData = {};
-    $scope.formData.people = [];
+    $scope.formData = {people: [], vehicles: []};
     $scope.person = {};
+    $scope.vehicle = {};
     
     // function to process the form
     $scope.processForm = function() {
         alert('awesome!');
     };
     
-    $scope.logPerson = function(person){
-        console.log (person);
+    $scope.addPerson = function(entry){
+        if (!entry.last_name){ //don't want to add to the array if object we got was empty
+            $scope.formData.people.push(entry);
+        }        
+        $scope.person = {};
+    };
+    $scope.addVehicle = function(entry){
+        if (!entry.license){
+            $scope.formData.vehicles.push(entry);
+        }
+        
+        $scope.vehicle = {};
     };
     
 });
