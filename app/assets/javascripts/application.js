@@ -16,5 +16,6 @@
 //= require angular-animate
 //= require angular-rails-templates
 //= require angular-ui-router
+//= require bootstrap-sass-official
 //= require_tree .
 //= require_tree ./templates

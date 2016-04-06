@@ -3,6 +3,7 @@
 
     <div id="form-container">
 
+
         <div class="page-header text-center">
             <h2>Tell Us All About You</h2>
             
@@ -11,6 +12,12 @@
                 <a ui-sref-active="active" ui-sref=".people"><span> </span> People</a>
                 <a ui-sref-active="active" ui-sref=".vehicles"><span> </span> Vehicles</a>
             </div>
+        </div>
+        <div ng-if="errorMessage" class="alert alert-danger" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          Your data was rejected by the server, reason: {{errorMessage}}
         </div>
         
         <form id="signup-form">

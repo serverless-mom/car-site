@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'people/new'
 
-  resources :households
-  resources :people
-  resources :vehicles
-
+  resources :households, :people, :vehicles, only: [:index, :show, :new, :create]
   
   devise_for :users
   

@@ -23,9 +23,8 @@
 
 
 <div class="text-center">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div ng-if="vehicle.ownerIndex" class="animate-if col-xs-6 col-xs-offset-3">
         <button ng-click="addVehicle(vehicle)" class="btn btn-block btn-secondary">Add Another Car</button>
-    
         <a ng-click="addVehicle(vehicle)" ui-sref="form.finalize" class="btn btn-block btn-info">    
         Finalize! <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>

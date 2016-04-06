@@ -45,6 +45,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
     $scope.person = {};
     $scope.vehicle = {};
     
+    $scope.errorMessage = "";
+    
     // function to process the form
     $scope.processForm = function() {
         alert('awesome!');
@@ -71,7 +73,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
        $http({url: '/households.json', method: 'POST', data: fullFormData
         }).then(function successCallback(response) {
             createPeople(response.data.id, fullFormData);
-          });
+          }, function failureCallback(response){$scope.errorMessage = response.data});//alert if household data wasn't accepted
         var createPeople = function (household_id, fullformData){
             var peeps = fullFormData.people;
             peeps.forEach(function (person){
@@ -83,9 +85,10 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
                         car.person_id = response.data.person_id;
                         $http.post('/vehicles.json', car);
                     });
-                });
+                }, function failureCallback(response){$scope.errorMessage = response.data});//alert on rejected person data
             });
         };
+
     };
     
 });
