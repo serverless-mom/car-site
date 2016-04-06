@@ -40,7 +40,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
     $urlRouterProvider.otherwise('/form/household');
 })
 
-.controller('formController', function($scope) {
+.controller('formController', function($scope, $http) {
     
     $scope.formData = {people: [], vehicles: []};
     $scope.person = {};
@@ -57,12 +57,31 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
         }        
         $scope.person = {};
     };
+    
     $scope.addVehicle = function(entry){
         if (!entry.license){
             $scope.formData.vehicles.push(entry);
         }
-        
         $scope.vehicle = {};
+    };
+    
+    $scope.processForm = function(){
+        // var data = {"address": formData.address, "city": formData.city, "state": formData.state }
+        var data = $scope.formData;
+           
+       $http({
+            url: '/households.json',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            data: data
+        }).then(function successCallback(response) {
+            console.log (response.data.id);
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+          });
+
+
     };
     
 });
