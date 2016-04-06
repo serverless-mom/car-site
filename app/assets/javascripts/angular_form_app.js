@@ -38,11 +38,16 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
 .controller('formController', function($scope) {
     
     $scope.formData = {};
-    $scope.personData = {};
+    $scope.formData.people = [];
+    $scope.person = {};
     
     // function to process the form
     $scope.processForm = function() {
         alert('awesome!');
+    };
+    
+    $scope.logPerson = function(person){
+        console.log (person);
     };
     
 });

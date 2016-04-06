@@ -13,10 +13,8 @@
             </div>
         </div>
         
-        <!-- catch the form submission and use our Angular function -->
-        <form id="signup-form" ng-submit="processForm()">
+        <form id="signup-form">
 
-            <!-- our nested state views will be injected here -->
             <div id="form-views" ui-view></div>
         </form>
 
@@ -24,6 +22,10 @@
 
     <pre>
         {{ formData }}
+        <br>
+        {{ person }}
+        <br>
+        {{ formData.people }}
     </pre>
 
 

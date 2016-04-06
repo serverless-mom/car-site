@@ -1,0 +1,45 @@
+#signup-form            { position:relative; min-height:310px; overflow:hidden; padding:31px; }
+#form-views             { width:auto; }
+
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:31px; right:31px;
+    transition:0.6s all ease; -moz-transition:0.6s all ease; -webkit-transition:0.6s all ease; 
+}
+    
+/* based on the work of animations genius Rachel Nabors http://codepen.io/rachelnabors/pen/PNYGZQ */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.6s both ease;
+    -moz-animation:slideInRight 0.6s both ease;
+    animation:slideInRight 0.6s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.6s both ease;
+    -moz-animation:slideOutLeft 0.6s both ease;
+    animation:slideOutLeft 0.6s both ease;   
+}
+
+
+@keyframes slideOutLeft {
+    to      { transform: translateX(-220%); }
+}
+@-moz-keyframes slideOutLeft {  
+    to      { -moz-transform: translateX(-220%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-220%); }
+}
+
+@keyframes slideInRight {
+    from    { transform:translateX(220%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(220%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(220%); }
+    to      { -webkit-transform: translateX(0); }
+}
