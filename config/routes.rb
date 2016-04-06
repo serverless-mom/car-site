@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'people/new'
 
-  resources :households do
-    resources :people do
-      resources :vehicles
-    end
-  end
+  resources :households
+  resources :people
+  resources :vehicles
+
   
   devise_for :users
   
