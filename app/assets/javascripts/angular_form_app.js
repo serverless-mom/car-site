@@ -52,7 +52,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
     };
     
     $scope.addPerson = function(entry){
-        if (!entry.last_name){ //don't want to add to the array if object we got was empty
+        if (!entry.age){ //don't want to add to the array if object we got was empty
             $scope.formData.people.push(entry);
         }        
         $scope.person = {};

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   get 'people/new'
 
-  resources :people
-  resources :households
-  resources :vehicles
+  resources :households do
+    resources :people do
+      resources :vehicles
+    end
+  end
   
   devise_for :users
   
-  root 'dashboard#index'
+  root 'angular_form#index'
   get "angular_form", to: "angular_form#index"
 end
