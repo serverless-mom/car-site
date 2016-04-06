@@ -11,3 +11,21 @@
 /log/*
 !/log/.keep
 /tmp
+
+#ignore NPM stuff
+/node_modules
+/npm-debug.log
+
+#I've hand-cleared this stuff but in case any of it generates automatically
+/test/assets/package-*/
+/test/assets/temp-*/
+/test/reports
+/test/tmp/
+
+#Bower components
+/bower.json
+/component.json
+/bower_components
+/test/sample
+!/test/sample/bower.json
+/npm-shrinkwrap.json
