@@ -4,14 +4,14 @@ This readme is in two sections: the bit specific for Mike and this job process, 
 # for Mike
 ## The stack I selected
 Server Framework Rails 
-JS Framework Angular (right now I'm not doing very much with Angular. In a site this simple I would probably use native Rails unless I knew it would grow or it included search)
+JS Framework Angular 
 UI Framework Bootstrap 
 Database Postgres
 
 ## Things I would fix for a professional project
 * commits are not squashed. I want to give as accurate a picture of my 'process' as possible so all origianl commits are here, even the ones where I realized I messed up.
 * There are some validations but not all that are really required - I wanted to demonstrate that I could do this, but it's not in the requirements so I put in a 'bare minimum' on each model
-* 'Users' and 'People' are totally seperate concepts, a bit like the 'user' is an insurance agent profiling multiple families
+* 'Users' and 'People' are totally seperate concepts, a bit like the 'user' is an insurance agent profiling multiple families. Anyway this seems kinda weird.
 
 okay now here's the stuff that would be on this project for everyone
 # CarSite demo app
@@ -23,6 +23,8 @@ okay now here's the stuff that would be on this project for everyone
 
 ## Known issues
 * database.yml has raw credentials, something I would *never* do normally, but I wanted to make Postgres deploy as easy as possible for any reviewers.
+* currently validation isn't bubbling back up to the form particularly well. This would probobably be my next features
+* no authentication on API endpoints
 
 ## Requirements
 * Ruby version 2.3.0
@@ -37,5 +39,3 @@ okay now here's the stuff that would be on this project for everyone
 * Database creation - You'll need PostgreSQL 9.3 installed/running and a user with l/p of "polish" and database creation privileges. 
 
 * Database initialization - standard `bundle exec rake db:create` and `db:migrate`
-
-
