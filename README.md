@@ -22,7 +22,7 @@ okay now here's the stuff that would be on this project for everyone
 * 'gender' is a string rather than a binary or dropdown - This is intentional and conforms with [requests from trans people](http://www.lgbt.cusu.cam.ac.uk/campaigns/think/forms/) that forms not force a binary on the respondents
 
 ## Known issues
-* database.yml has raw credentials, something I would *never* do normally, but I wanted to make Postgres deploy as easy as possible for any reviewers.
+* database.yml has raw credentials, something I would not do normally, but I wanted to make Postgres deploy as easy as possible for any reviewers.
 * currently validation isn't bubbling back up to the form particularly well. This would probobably be my next features
 * no authentication on API endpoints
 

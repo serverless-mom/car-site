@@ -1,4 +1,4 @@
-#signup-form            { position:relative; min-height:310px; overflow:hidden; padding:31px; }
+#signup-form            { position:relative; min-height:500px; overflow:hidden; padding:31px; }
 #form-views             { width:auto; }
 
 #form-views.ng-enter,
