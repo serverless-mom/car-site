@@ -48,9 +48,9 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
     $scope.errorMessage = "";
     
     // function to process the form
-    $scope.processForm = function() {
-        alert('awesome!');
-    };
+    // $scope.processForm = function() {
+    //     alert('awesome!');
+    // };
     
     $scope.addPerson = function(entry){
         if (entry.last_name){ //don't want to add to the array if object we got was empty
@@ -73,7 +73,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'templates'])
        $http({url: '/households.json', method: 'POST', data: fullFormData
         }).then(function successCallback(response) {
             createPeople(response.data.id, fullFormData);
-          }, function failureCallback(response){$scope.errorMessage = response.data});//alert if household data wasn't accepted
+            }, function failureCallback(response){$scope.errorMessage = response.data});//alert if household data wasn't accepted
+        
         var createPeople = function (household_id, fullformData){
             var peeps = fullFormData.people;
             peeps.forEach(function (person){

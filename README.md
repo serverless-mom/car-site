@@ -1,7 +1,12 @@
 
 
-This readme is in two sections: the bit specific for Mike and this job process, and the general readme I'd always write.
-# for Mike
+This is a quick app I made to demonstrate my thinking on building a basic app.
+
+## Requirements
+* take in household, person, and car information
+* Strictly maintain the relationship of a 'person' belonging to a 'household' and a 'car' to a person
+* allow users to assign cars to their correct owners all within the same data entry workflow
+
 ## The stack I selected
 Server Framework Rails 
 JS Framework Angular 
